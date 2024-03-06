@@ -12,7 +12,8 @@ export default function Textform(props) {
   }
   const [text, setText] = useState('Enter text here'); //created a state which is text whose value is enter text here //text is a state variable .it can be updated using setText function.
   return (
-    <div>
+    <> 
+    <div className='container'>
      <h1>{props.heading}</h1>
 <div className="mb-3">
   
@@ -20,5 +21,10 @@ export default function Textform(props) {
 </div>
 <button className="btn btn-primary" onClick={handleUpClick}>Convert to UpperCase</button> 
     </div>
+    <div className="container my-2">
+      <h1>Your text summary</h1>
+      <p>{text.split(" ").length} words and {text.length}</p>
+    </div>
+    </>
   )
 }
