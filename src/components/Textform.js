@@ -1,7 +1,9 @@
 import React,{useState}from 'react'
 export default function Textform(props) {
   const handleUpClick = ()=>{
-    console.log("UpperCase was clicked");
+    console.log("UpperCase was clicked" + text );
+    let newText= text.toUpperCase();
+    setText(newText)
     setText("You have clicked on handleUpClick")
   }
   const handleOnChange = (event)=>{
@@ -11,7 +13,7 @@ export default function Textform(props) {
   const [text, setText] = useState('Enter text here'); //created a state which is text whose value is enter text here //text is a state variable .it can be updated using setText function.
   return (
     <div>
-     <h1>{props.heading} - {text}</h1>
+     <h1>{props.heading}</h1>
 <div className="mb-3">
   
   <textarea className="form-control"  value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea> 
