@@ -8,11 +8,11 @@ import React,{useState} from 'react';
 import Alert from './components/Alert'
 function App() {
   const[mode,setMode]=useState('light');// whether dark mode is enabled or not
-  const[alert,setalert]=useState(null);
+  const[alert,setAlert]=useState(null);
 
   const showAlert = (message,type) =>
   {
-    setalert({
+    setAlert({
       msg:message,
       type:type
     })
@@ -23,10 +23,12 @@ function App() {
     {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
+      setAlert("Dark mode has been enabled","success");
     }
     else{
       setMode('light');
       document.body.style.backgroundColor = 'white';
+      setAlert("Light mode has been enabled","success");
     }
 
   }
