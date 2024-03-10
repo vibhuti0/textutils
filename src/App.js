@@ -12,11 +12,11 @@ function App() {
     if(mode==='light')
     {
       setMode('dark');
-      document.body.style.backgroundColour = 'black';
+      document.body.style.backgroundColor = 'black';
     }
     else{
       setMode('light');
-      document.body.style.backgroundColour = 'white';
+      document.body.style.backgroundColor = 'white';
     }
 
   }
