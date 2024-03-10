@@ -5,8 +5,18 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React,{useState} from 'react';
+import Alert from './components/Alert'
 function App() {
   const[mode,setMode]=useState('light');// whether dark mode is enabled or not
+  const[alert,setalert]=useState(null);
+
+  const showAlert = (message,type) =>
+  {
+    setalert({
+      msg:message,
+      type:type
+    })
+  }
   const toggleMode =()=>
   {
     if(mode==='light')
@@ -23,6 +33,7 @@ function App() {
   return (
     <>
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
+    <Alert alert={alert}/>
     <div className="container my-3">
       <Textform heading="Enter the text to analyze" mode={mode}/>
     </div>
