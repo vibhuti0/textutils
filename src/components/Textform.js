@@ -25,17 +25,17 @@ export default function Textform(props) {
   const [text, setText] = useState('Enter text here'); //created a state which is text whose value is enter text here //text is a state variable .it can be updated using setText function.
   return (
     <> 
-    <div className='container'>
+    <div className='container' style={{color: props.mode==='dark'?'white':'black'}}>
      <h1>{props.heading}</h1>
 <div className="mb-3">
   
-  <textarea className="form-control"  value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea> 
+  <textarea className="form-control"  value={text} onChange={handleOnChange} style={{backgroundColor:props.mode ==='dark'?'grey':'white'}} id="myBox" rows="8"></textarea> 
 </div>
 <button className="btn btn-primary" onClick={handleUpClick}>Convert to UpperCase</button> 
 <button className="btn btn-primary mx-1" onClick={handleLoClick}>Lowercase</button>
 <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear Text</button>
     </div>
-    <div className="container my-2">
+    <div className="container my-2" style={{color: props.mode==='dark'?'white':'black'}}>
       <h1>Your text summary</h1>
       <p>{text.split(" ").length} words and {text.length} characters</p>
       <p>{0.008 * text.length} Minutes read</p>
