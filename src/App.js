@@ -9,12 +9,14 @@ function App() {
   const[mode,setMode]=useState('light');// whether dark mode is enabled or not
   const toggleMode =()=>
   {
-    if(mode=='light')
+    if(mode==='light')
     {
       setMode('dark');
+      document.body.style.backgroundColour = 'black';
     }
     else{
       setMode('light');
+      document.body.style.backgroundColour = 'white';
     }
 
   }
