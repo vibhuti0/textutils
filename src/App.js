@@ -6,12 +6,7 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React,{useState} from 'react';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
 function App() {
   const[mode,setMode]=useState('light');// whether dark mode is enabled or not
   const[alert,setAlert]=useState(null);
@@ -46,12 +41,11 @@ function App() {
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container my-3">
-      
-      <Textform showAlert={showAlert} heading="Enter the text to analyze" mode={mode}/>
-      <About/>
-    </div>
+    <Textform showAlert={showAlert} heading ="Enter the text to analyze" mode={mode}/>
+      </div> 
     </>
   );
 }
+
 
 export default App;
